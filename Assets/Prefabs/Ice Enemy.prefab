@@ -129,6 +129,7 @@ MonoBehaviour:
   iceProj: {fileID: 7987517242694205818, guid: 07c989d00ce7cf24c83430f23265467d, type: 3}
   projPos: {fileID: 3876839112392670910}
   fireRate: 2
+  shootDistance: 12
 --- !u!1 &3374741009181265719
 GameObject:
   m_ObjectHideFlags: 0

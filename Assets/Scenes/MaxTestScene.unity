@@ -207,102 +207,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!1001 &67115169
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 7899682607274125535, guid: 07c989d00ce7cf24c83430f23265467d, type: 3}
-      propertyPath: m_RootOrder
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 7899682607274125535, guid: 07c989d00ce7cf24c83430f23265467d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 2.9476488
-      objectReference: {fileID: 0}
-    - target: {fileID: 7899682607274125535, guid: 07c989d00ce7cf24c83430f23265467d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.1981636
-      objectReference: {fileID: 0}
-    - target: {fileID: 7899682607274125535, guid: 07c989d00ce7cf24c83430f23265467d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.026439019
-      objectReference: {fileID: 0}
-    - target: {fileID: 7899682607274125535, guid: 07c989d00ce7cf24c83430f23265467d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7899682607274125535, guid: 07c989d00ce7cf24c83430f23265467d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7899682607274125535, guid: 07c989d00ce7cf24c83430f23265467d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7899682607274125535, guid: 07c989d00ce7cf24c83430f23265467d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7899682607274125535, guid: 07c989d00ce7cf24c83430f23265467d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7899682607274125535, guid: 07c989d00ce7cf24c83430f23265467d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7899682607274125535, guid: 07c989d00ce7cf24c83430f23265467d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7987517242694205818, guid: 07c989d00ce7cf24c83430f23265467d, type: 3}
-      propertyPath: m_Name
-      value: Ice Projectile
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 7987517242694205818, guid: 07c989d00ce7cf24c83430f23265467d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 67115171}
-  m_SourcePrefab: {fileID: 100100000, guid: 07c989d00ce7cf24c83430f23265467d, type: 3}
---- !u!1 &67115170 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7987517242694205818, guid: 07c989d00ce7cf24c83430f23265467d, type: 3}
-  m_PrefabInstance: {fileID: 67115169}
-  m_PrefabAsset: {fileID: 0}
---- !u!50 &67115171
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 67115170}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 1
-  m_SleepingMode: 1
-  m_CollisionDetection: 1
-  m_Constraints: 0
 --- !u!1 &363842671
 GameObject:
   m_ObjectHideFlags: 0
@@ -564,6 +468,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 3805651770418718670, guid: 01fe4b2076504994c8bf8d1e33370b78, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -582,6 +490,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 594161747423950172, guid: 7184f69853b45044c92c77b44ddb8056, type: 3}
+      propertyPath: fireRate
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 594161747423950172, guid: 7184f69853b45044c92c77b44ddb8056, type: 3}
+      propertyPath: shootDistance
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3136249170110817132, guid: 7184f69853b45044c92c77b44ddb8056, type: 3}
       propertyPath: m_Name
       value: Ice Enemy
