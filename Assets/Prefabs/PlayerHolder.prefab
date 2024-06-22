@@ -45,6 +45,7 @@ GameObject:
   - component: {fileID: 2416506305357948289}
   - component: {fileID: 6708390259765313182}
   - component: {fileID: 4156024254565645105}
+  - component: {fileID: 5338303377876584368}
   - component: {fileID: 182340678214532639}
   - component: {fileID: 8683609112502552412}
   m_Layer: 0
@@ -136,7 +137,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -253,6 +254,10 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: 2c4da0cd-2afd-4d25-885d-a527eb1e96e0
     m_ActionName: Player/Jump[/Keyboard/space]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 29152bfc-89af-4f1b-a9f4-02fd8e9df027
+    m_ActionName: Player/FireGun[/Mouse/rightButton]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
   m_DefaultActionMap: Player
@@ -270,10 +275,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf8b934c04f81bf478f1c11c15ebed6d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 5
+  walkSpeed: 5
+  runSpeed: 8
   jumpImpulse: 10
-  groundDistance: 0.05
-  contactFilter:
+  _isMoving: 0
+  _isRunning: 0
+--- !u!114 &5338303377876584368
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3805651770418718670}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 963af6df516502d4eb4516ce97ca89ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  castFilter:
     useTriggers: 0
     useLayerMask: 0
     useDepth: 0
@@ -287,6 +306,12 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+  groundDistance: 0.05
+  wallDistance: 0.2
+  ceilingDistance: 0.05
+  _isGrounded: 0
+  _isOnWall: 0
+  _isOnCeiling: 0
 --- !u!95 &182340678214532639
 Animator:
   serializedVersion: 5
