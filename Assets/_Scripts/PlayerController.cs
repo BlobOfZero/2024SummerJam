@@ -66,7 +66,7 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveInput.x * walkSpeed, rb.velocity.y);
+        rb.velocity = new Vector2(moveInput.x * currentMoveSpeed, rb.velocity.y);
     }
 
     // left and right movement code
