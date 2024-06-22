@@ -21,6 +21,13 @@ public class FireProjectile : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        Damageable damageable = collision.GetComponent<Damageable>();
+
+        if (damageable != null)
+        {
+            damageable.Hit(damage);
+            Debug.Log("fire attack damaged " + damage);
+            Destroy(gameObject);
+        }
     }
 }
