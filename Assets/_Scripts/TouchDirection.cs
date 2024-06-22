@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TouchDirection : MonoBehaviour
 {
-    CapsuleCollider2D touchingCol;
+    CircleCollider2D touchingCol;
 
     public ContactFilter2D castFilter;
     public float groundDistance = 0.05f;
@@ -55,7 +55,7 @@ public class TouchDirection : MonoBehaviour
 
     private void Awake()
     {
-        touchingCol = GetComponent<CapsuleCollider2D>();
+        touchingCol = GetComponent<CircleCollider2D>();
     }
 
     private void FixedUpdate()
