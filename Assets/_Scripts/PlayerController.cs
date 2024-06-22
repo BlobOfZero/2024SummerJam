@@ -4,57 +4,90 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    TouchDirection touchingDirections;
     Vector2 moveInput;
-    public float movementSpeed = 5f;
+    public float walkSpeed = 5f;
+    public float runSpeed = 8f;
     public float jumpImpulse = 10f;
-    public float groundDistance = 0.05f;
 
     Rigidbody2D rb;
-    CapsuleCollider2D capsuleCollider;
     Animator animator;
-    RaycastHit2D[] groundhits = new RaycastHit2D[5];
 
-    public ContactFilter2D contactFilter;
-    public bool isMoving { get; private set; }
-    private bool _isGrounded;
-    public bool isGrounded
+    [SerializeField] private bool _isMoving = false;
+    public bool isMoving { get { return _isMoving; }
+        private set { _isMoving = value;
+        } }
+
+    [SerializeField] private bool _isRunning = false;
+    public bool isRunning
+    {
+        get { return _isRunning; }
+        private set
+        {
+            _isRunning = value;
+        }
+    }
+
+    public float currentMoveSpeed
     {
         get
         {
-            return _isGrounded;
-        }
-        private set
-        {
-            _isGrounded = value;
+            if (isMoving && !touchingDirections.isOnWall)
+            {
+                if (isRunning)
+                {
+                    return runSpeed;
+                }
+                else
+                {
+                    return walkSpeed;
+                }
+            }
+            else
+            {
+                return 0f;
+            }
         }
     }
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        capsuleCollider = GetComponent<CapsuleCollider2D>();
         animator = GetComponent<Animator>();
+        touchingDirections = GetComponent<TouchDirection>();
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveInput.x * movementSpeed, rb.velocity.y);
-
-        isGrounded = capsuleCollider.Cast(Vector2.down, contactFilter, groundhits, groundDistance) > 0;
+        rb.velocity = new Vector2(moveInput.x * walkSpeed, rb.velocity.y);
     }
 
+    // left and right movement code
     public void OnMove(InputAction.CallbackContext context)
     {
-       
         moveInput = context.ReadValue<Vector2>();
 
         isMoving = moveInput != Vector2.zero;
     }
 
+    // optional sprint
+    public void OnRun(InputAction.CallbackContext context)
+    {
+        if(context.started)
+        {
+            isRunning = true;
+        }
+        else if (context.canceled)
+        {
+            isRunning = false;
+        }
+    }
+
+    // basic jumping code
     public void OnJump(InputAction.CallbackContext context)
     {
         // check for aliive later
-        if (context.started && isGrounded)
+        if (context.started && touchingDirections.isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpImpulse);
         }
