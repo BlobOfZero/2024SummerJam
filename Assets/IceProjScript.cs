@@ -9,6 +9,8 @@ public class IceProjScript : MonoBehaviour
     private GameObject player;
     private Rigidbody2D rb;
     private float timer;
+    [SerializeField] private int damage = 20;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +18,7 @@ public class IceProjScript : MonoBehaviour
         player = GameObject.FindGameObjectWithTag("Player");
 
         Vector3 direction = player.transform.position - transform.position;
-        rb.velocity = new Vector2 (direction.x, direction.y).normalized * speed;
+        rb.velocity = new Vector2(direction.x, direction.y).normalized * speed;
         float rotation = Mathf.Atan2(-direction.y, -direction.x) * Mathf.Rad2Deg;
         transform.rotation = Quaternion.Euler(0, 0, rotation);
     }
@@ -25,16 +27,18 @@ public class IceProjScript : MonoBehaviour
     void Update()
     {
         timer += Time.deltaTime;
-        if (timer > 10) 
+        if (timer > 10)
         {
             Destroy(gameObject);
         }
     }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        Damageable damageable = other.GetComponent<Damageable>();
+
+        if (damageable != null && other.gameObject.CompareTag("Player"))
         {
-            //Lower Player Health
+            damageable.Hit(damage);
             Destroy(gameObject);
         }
     }

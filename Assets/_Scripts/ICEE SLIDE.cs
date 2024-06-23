@@ -1,0 +1,18 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class ICEESLIDE : MonoBehaviour
+{
+    Rigidbody2D rb;
+    [SerializeField] private float slideSpeed = 5f;
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.CompareTag("Player"))
+        {
+            rb  = collision.gameObject.GetComponent<Rigidbody2D>();
+            rb.AddForce(collision.transform.up * slideSpeed, ForceMode2D.Impulse);
+        }
+    }
+}
