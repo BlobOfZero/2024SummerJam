@@ -18,4 +18,12 @@ public class IceProjectile : MonoBehaviour
     {
         rb.velocity = new Vector2(projectileSpeed.x * transform.localScale.x, projectileSpeed.y);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Fire"))
+        {
+            Destroy(collision);
+        }
+    }
 }
