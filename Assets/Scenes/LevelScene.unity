@@ -478,7 +478,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4156024254565645105, guid: 01fe4b2076504994c8bf8d1e33370b78, type: 3}
       propertyPath: walkSpeed
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4156024254565645105, guid: 01fe4b2076504994c8bf8d1e33370b78, type: 3}
       propertyPath: jumpImpulse
@@ -13104,9 +13104,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de2d9a9875498af47a595eae45a53105, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilemap: {fileID: 1238862858}
-  tileDatas:
-  - {fileID: 11400000, guid: ecd7a573a34b6f448a00fe9a6a2b84f6, type: 2}
-  - {fileID: 11400000, guid: 6775c8dd75d358241a320b4f025aec4d, type: 2}
-  iceTile: {fileID: 11400000, guid: c1c4e6dc6de623b4ebcba0f95c3e145d, type: 2}
-  nonIceTile: {fileID: 11400000, guid: 8c19ef065a6a8a04395603bcc90395e1, type: 2}

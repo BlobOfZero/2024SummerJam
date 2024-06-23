@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 92239346590504905}
   - component: {fileID: 2515480423434301741}
   - component: {fileID: 594161747423950172}
+  - component: {fileID: 2674650988205084573}
   m_Layer: 6
   m_Name: Ice Enemy
   m_TagString: Enemy
@@ -76,7 +77,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 1301791453, guid: a7e8150cbd694444686051a2bb169e8b, type: 3}
   m_Color: {r: 0, g: 1, b: 0.89932394, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -130,6 +131,41 @@ MonoBehaviour:
   projPos: {fileID: 3876839112392670910}
   fireRate: 2
   shootDistance: 12
+--- !u!70 &2674650988205084573
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3136249170110817132}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.0050284863, y: 0.0025142431}
+  m_Size: {x: 0.8103423, y: 1.3254278}
+  m_Direction: 0
 --- !u!1 &3374741009181265719
 GameObject:
   m_ObjectHideFlags: 0
