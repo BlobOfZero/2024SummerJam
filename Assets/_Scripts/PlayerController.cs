@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
     public bool isFacingRight { get { return _isFacingRight; } private set { 
             if(_isFacingRight != value)
             {
-                transform.localScale *= new Vector2(-1, 1);
+                transform.Rotate(0, 180, 0);
             }
             _isFacingRight = value; } }
 
@@ -68,8 +68,6 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-          //  Vector2 moveVelocity = new Vector2(1, rb.velocity.y); // this handles how fast player moves to the right
-           /// rb.velocity = moveVelocity;
 
         rb.velocity = new Vector2(moveInput.x * currentMoveSpeed, rb.velocity.y);
     }

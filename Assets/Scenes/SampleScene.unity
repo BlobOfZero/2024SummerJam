@@ -338,6 +338,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &269407162 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8037094336497399847, guid: 01fe4b2076504994c8bf8d1e33370b78, type: 3}
+  m_PrefabInstance: {fileID: 8707200221832671}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1170,6 +1175,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1065721027638896834, guid: 01fe4b2076504994c8bf8d1e33370b78, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1087553716783701282, guid: 01fe4b2076504994c8bf8d1e33370b78, type: 3}
       propertyPath: m_Name
       value: PlayerHolder
@@ -1182,6 +1191,10 @@ PrefabInstance:
       propertyPath: weaponCooldown
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 8339419648645337197, guid: 01fe4b2076504994c8bf8d1e33370b78, type: 3}
+      propertyPath: projectileSpawn
+      value: 
+      objectReference: {fileID: 269407162}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

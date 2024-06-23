@@ -5,7 +5,7 @@ using UnityEngine;
 public class IceProjectile : MonoBehaviour
 {
     [SerializeField] private int damage = 10;
-    [SerializeField] private Vector2 projectileSpeed = new Vector2(3f, 0);
+    [SerializeField] private float projectileSpeed;
 
     Rigidbody2D rb;
 
@@ -16,14 +16,19 @@ public class IceProjectile : MonoBehaviour
 
     private void Start()
     {
-        rb.velocity = new Vector2(projectileSpeed.x * transform.localScale.x, projectileSpeed.y);
+        rb.velocity = transform.right * projectileSpeed;
+        Destroy(gameObject, 5);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Fire"))
+        Damageable damageable = collision.GetComponent<Damageable>();
+
+        if (damageable != null)
         {
-            Destroy(collision);
+            damageable.Hit(damage);
+            Debug.Log("fire attack damaged " + damage);
+            Destroy(gameObject);
         }
     }
 }
