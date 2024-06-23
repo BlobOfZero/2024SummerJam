@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public float runSpeed = 8f;
     public float jumpImpulse = 10f;
 
+    Damageable damageableScript;
+
     Rigidbody2D rb;
     Animator animator;
 
@@ -66,7 +68,10 @@ public class PlayerController : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(moveInput.x * currentMoveSpeed, rb.velocity.y);
+            Vector2 moveVelocity = new Vector2(1, rb.velocity.y); // this handles how fast player moves to the right
+            rb.velocity = moveVelocity;
+
+        // rb.velocity = new Vector2(moveInput.x * currentMoveSpeed, rb.velocity.y);
     }
 
     // left and right movement code
